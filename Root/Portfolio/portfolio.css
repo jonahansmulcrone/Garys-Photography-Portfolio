@@ -1,0 +1,51 @@
+.navbar {
+    padding: 75px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    font-family: "Gemeli Mono Web Light Regular";
+    letter-spacing: 2px;
+}
+
+.navbar-left, .navbar-right {
+    position: absolute;
+    top: 50%;
+}
+
+.navbar-left {
+    left: 80px; /* Position the left navbar 20px from the left edge */
+    display: flex;
+}
+
+.navbar-right {
+    right: 80px; /* Position the right navbar 20px from the right edge */
+    display: flex;
+}
+
+.navbar-left div, .navbar-right div {
+    font-weight: 200;
+    cursor: pointer;
+    margin: 0 25px; /* Add margin to separate the div elements */
+    width: 45px;
+}
+
+a {
+    text-decoration: none;
+    color: #b3b3b3;
+    transition: all 0.1s ease;
+}
+
+a:hover {
+    font-weight: 600;
+    color: black;
+}
+
+.link-current a {
+    font-weight: 600;
+    color: black;
+}
+
+.gallery-image {
+    width: 100%
+}

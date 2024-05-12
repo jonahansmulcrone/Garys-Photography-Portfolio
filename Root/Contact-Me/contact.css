@@ -1,0 +1,229 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 2px;
+}
+
+.navbar {
+    padding: 75px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    font-family: "Gemeli Mono Web Light Regular";
+    letter-spacing: 2px;
+}
+
+.navbar-left,
+.navbar-right {
+    position: absolute;
+    top: 50%;
+}
+
+.navbar-left {
+    left: 80px;
+    display: flex;
+}
+
+.navbar-right {
+    right: 80px;
+    display: flex;
+}
+
+.navbar-left div,
+.navbar-right div {
+    font-weight: 200;
+    cursor: pointer;
+    margin: 0 25px;
+    width: 45px;
+}
+
+a {
+    text-decoration: none;
+    color: #b3b3b3;
+    transition: all 0.1s ease;
+}
+
+a:hover {
+    font-weight: 600;
+    color: black;
+}
+
+.link-current a {
+    font-weight: 600;
+    color: black;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.sections {
+    padding: 20px;
+}
+
+.bottom-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.top-left {
+    font-family: "Gemeli Mono Web Light Regular";
+    margin-bottom: 50px;
+    border-bottom: 1px solid black;
+}
+
+.bottom-left {
+    font-family: "Gemeli Mono Web Light Regular";
+    color: #b3b3b3;
+    flex-wrap: wrap;
+}
+
+.bottom-right {
+    font-family: "Gemeli Mono Web Light Regular";
+    color: #b3b3b3;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.contact-me-title {
+    font-weight: 600;
+    font-size: 38px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-family: "Columbia Titling Medium";
+}
+
+.contact-me-info div {
+    margin-bottom: 35px
+}
+
+.bottom-right input {
+    background-color: rgb(250, 250, 250);
+    border: 1px solid rgb(169, 169, 169);
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    height: 46px;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    font-family: "Gemeli Mono Web Light Regular";
+    margin-bottom: 25px;
+}
+
+.bottom-right button {
+    font-family: "Gemeli Mono Web Light Regular";
+    padding: 20px 80px 20px 80px;
+    background-color: transparent;
+    border-width: 2px;
+    border-style: solid;
+    cursor: pointer;
+    margin-top: 20px;
+    /* Add space between inputs and button */
+    text-align: center;
+}
+
+.bottom-right button:hover {
+    background-color: black;
+    color: white
+}
+
+.form-name {
+    display: flex;
+    gap: 15px;
+}
+
+.bottom-right div {
+    font-size: 14px;
+}
+
+.form-button {
+    align-self: center;
+}
+
+.last-name {
+    width: 50%;
+}
+
+.first-name {
+    width: 50%
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.container.hidden {
+    display: none;
+}
+
+.hamburger-navbar {
+    display: none;
+}
+
+.close-icon {
+    display: none !important;
+}
+
+
+@media only screen and (max-width: 768px) {
+
+    .navbar .navbar-left,
+    .navbar .navbar-right {
+        display: none;
+    }
+
+    .bottom-sections {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 32px
+    }
+
+    .hamburger {
+        display: block;
+        user-select: none;
+        position: absolute;
+        right: 40px;
+        font-size: 32px;
+    }
+
+    .hamburger.hidden {
+        display: none;
+    }
+
+    .hamburger-navbar.hidden {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        position: fixed;
+        top: 48%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: "Gemeli Mono Web Light Regular";
+    }
+
+    .close-icon {
+        display: none !important;
+    }
+
+    .close-icon.hidden {
+        display: block !important;
+        user-select: none !important;
+        position: absolute !important;
+        right: 43px !important;
+        top: 82px;
+        font-size: 32px !important;
+    }
+
+
+}
