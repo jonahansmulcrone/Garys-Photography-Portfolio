@@ -47,6 +47,7 @@ a:hover {
 }
 
 .container {
+    padding: 20px;
     max-width: 92vw; 
     max-height: 98vh; 
     box-sizing: border-box;
@@ -90,4 +91,47 @@ a:hover {
 
 .image-wrapper:hover .image-title {
     opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar .navbar-left,
+    .navbar .navbar-right {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        user-select: none;
+        position: absolute;
+        right: 40px;
+        font-size: 32px;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        max-height: 100%;
+    }
+
+    .image-wrapper {
+        width: 100%;
+        height: 75vh; /* Adjust the height to crop the image vertically */
+        overflow: hidden; /* Hide any overflow */
+        position: relative; 
+    }
+    
+    .image-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        padding: 5px;
+        opacity: 1; 
+        font-size: 8vw;
+        font-family: "Columbia Titling Medium";
+        text-transform: uppercase;
+        color: white;
+    }
 }

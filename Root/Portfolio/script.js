@@ -1,4 +1,13 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
+
+import { getAuth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+  GoogleAuthProvider,
+  signInWithPopup } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-auth.js"
+  
 import { getStorage, ref, listAll } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-storage.js"
 
 const firebaseConfig = {
@@ -11,10 +20,8 @@ const firebaseConfig = {
   measurementId: "G-TSWDSHCG5F"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Get a reference to the storage service, which is used to create references in your storage bucket
 const storage = getStorage();
 
 const listRef = ref(storage, "Dahlias");
