@@ -46,6 +46,48 @@ a:hover {
     color: black;
 }
 
-.gallery-image {
-    width: 100%
+.container {
+    max-width: 92vw; 
+    max-height: 98vh; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-wrapper {
+    width: 100%;
+    height: 75vh; /* Adjust the height to crop the image vertically */
+    overflow: hidden; /* Hide any overflow */
+    position: relative; 
+}
+
+.image-wrapper img {
+    width: 100%;
+    object-fit: cover; /* Ensure the image covers the container */
+    object-position: center; /* Center the image */
+}
+
+.image-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    box-sizing: border-box;
+    opacity: 0; 
+    transition: opacity 0.1s ease;
+    font-size: 2vw;
+    font-family: "Columbia Titling Medium";
+    text-transform: uppercase;
+    color: white;
+}
+
+.image-wrapper:hover .image-title {
+    opacity: 1;
 }
