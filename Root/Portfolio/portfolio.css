@@ -1,3 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+}
+
 .navbar {
     padding: 75px;
     font-size: 14px;
@@ -14,19 +24,19 @@
 }
 
 .navbar-left {
-    left: 80px; /* Position the left navbar 20px from the left edge */
+    left: 80px;
     display: flex;
 }
 
 .navbar-right {
-    right: 80px; /* Position the right navbar 20px from the right edge */
+    right: 80px;
     display: flex;
 }
 
 .navbar-left div, .navbar-right div {
     font-weight: 200;
     cursor: pointer;
-    margin: 0 25px; /* Add margin to separate the div elements */
+    margin: 0 25px;
     width: 45px;
 }
 
@@ -47,56 +57,79 @@ a:hover {
 }
 
 .container {
-    padding: 20px;
-    max-width: 92vw; 
-    max-height: 98vh; 
-    box-sizing: border-box;
+    width: 100%;
+    padding: 0 40px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
+    flex-direction: column;
+    gap: 40px;
 }
 
-.image-wrapper {
+.vertical-image-wrapper {
     width: 100%;
-    height: 75vh; /* Adjust the height to crop the image vertically */
-    overflow: hidden; /* Hide any overflow */
-    position: relative; 
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
 }
 
-.image-wrapper img {
+.vertical-image-wrapper img {
+    width: 31.4%;
+    height: auto; 
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.horizontal-image-wrapper {
     width: 100%;
-    object-fit: cover; /* Ensure the image covers the container */
-    object-position: center; /* Center the image */
+    height: 90vh;
 }
 
-.image-title {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.horizontal-image-wrapper img {
     width: 100%;
-    text-align: center;
-    padding: 5px;
-    box-sizing: border-box;
-    opacity: 0; 
-    transition: opacity 0.1s ease;
-    font-size: 2vw;
-    font-family: "Columbia Titling Medium";
-    text-transform: uppercase;
-    color: white;
+    height: 100%;
+    object-fit: cover;
 }
 
-.image-wrapper:hover .image-title {
-    opacity: 1;
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.container.hidden {
+    display: none;
+}
+
+.hamburger-navbar {
+    display: none;
+}
+
+.close-icon {
+    display: none !important;
 }
 
 @media screen and (max-width: 768px) {
     .navbar .navbar-left,
     .navbar .navbar-right {
         display: none;
+    }
+
+    .container {
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .vertical-image-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .vertical-image-wrapper img {
+        width: 100%;
+        max-height: none;
+        height: auto;
+    }
+
+    .horizontal-image-wrapper {
+        height: 70vh;
     }
 
     .hamburger {
@@ -107,31 +140,32 @@ a:hover {
         font-size: 32px;
     }
 
-    .container {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        max-height: 100%;
+    .hamburger.hidden {
+        display: none;
     }
 
-    .image-wrapper {
-        width: 100%;
-        height: 75vh; /* Adjust the height to crop the image vertically */
-        overflow: hidden; /* Hide any overflow */
-        position: relative; 
-    }
-    
-    .image-title {
-        position: absolute;
-        top: 50%;
+    .hamburger-navbar.hidden {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        position: fixed;
+        top: 48%;
         left: 50%;
         transform: translate(-50%, -50%);
-        text-align: center;
-        padding: 5px;
-        opacity: 1; 
-        font-size: 8vw;
-        font-family: "Columbia Titling Medium";
-        text-transform: uppercase;
-        color: white;
+        font-family: "Gemeli Mono Web Light Regular";
+    }
+
+    .close-icon {
+        display: none !important;
+    }
+
+    .close-icon.hidden {
+        display: block !important;
+        user-select: none !important;
+        position: absolute !important;
+        right: 43px !important;
+        top: 82px;
+        font-size: 32px !important;
     }
 }
