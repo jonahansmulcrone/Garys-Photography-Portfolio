@@ -118,6 +118,18 @@ a:hover {
     margin-bottom: 25px;
 }
 
+.bottom-right textarea {
+    background-color: rgb(250, 250, 250);
+    border: 1px solid rgb(169, 169, 169);
+    padding: 10px;
+    margin-bottom: 25px;
+    font-family: "Gemeli Mono Web Light Regular";
+    position: relative;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    width: 100%;
+}
+
 .bottom-right button {
     font-family: "Gemeli Mono Web Light Regular";
     padding: 20px 80px 20px 80px;

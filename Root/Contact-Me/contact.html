@@ -50,47 +50,50 @@
                 <div class="bottom-left">If you're interested in getting in touch, please feel welcome to fill out a
                     form. I will get back to you as soon as possible!</div>
                 <div class="bottom-right">
-                    <div class="form-name">
-                        <div class="first-name">First Name
-                            <input>
+                    <form onsubmit="sendEmail(); reset(); return false;">
+                        <div class="form-name">
+                            <div class="first-name">First Name
+                                <input type="text" id="first-name" required>
+                            </div>
+                            <div class="last-name">Last Name
+                                <input type="text" id="last-name" required>
+                            </div>
                         </div>
-                        <div class="last-name">Last Name
-                            <input>
+                        <div class="form-email">Email Address (required)
+                            <input type="email" id="email">
                         </div>
-                    </div>
-                    <div class="form-email">Email Address (required)
-                        <input>
-                    </div>
-                    <div class="form-subject">Subject (required)
-                        <input>
-                    </div>
-                    <div class="form-message">Message (required)
-                        <input>
-                    </div>
-                    <div class="form-button">
-                        <button>Submit</button>
-                    </div>
+                        <div class="form-subject">Subject (required)
+                            <input type="text" id="subject">
+                        </div>
+                        <div class="form-message">Message (required)
+                            <textarea id="message" rows="4"></textarea>
+                        </div>
+                        <div class="form-button">
+                            <button type="submit" id="submit-button">Submit</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
 
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+
     <script>
 
-        document.querySelector('.hamburger').addEventListener('click', function () {
-            document.querySelector('.container').classList.toggle('hidden');
-            document.querySelector('.hamburger-navbar').classList.toggle('hidden')
-            document.querySelector('.hamburger').classList.toggle('hidden')
-            document.querySelector('.close-icon').classList.toggle('hidden')
-
-        });
-
-        document.querySelector('.close-icon').addEventListener('click', function() {
-            document.querySelector('.container').classList.toggle('hidden');
-            document.querySelector('.hamburger-navbar').classList.toggle('hidden')
-            document.querySelector('.hamburger').classList.toggle('hidden')
-            document.querySelector('.close-icon').classList.toggle('hidden')
-        })
+        function sendEmail() {
+            Email.send({
+                Host: "smtp.elasticemail.com",
+                Username: "jonahmulcrone@gmail.com",
+                Password: "6D9EED150869FCFAF6EFBCCA263B2B1CB55E",
+                To: 'jonahmulcrone@gmail.com',
+                From: document.getElementById("email").value,
+                Subject: document.getElementById("subject").value,
+                Body: document.getElementById("message").value
+            }).then(
+                message => alert(message)
+            );
+        }
 
     </script>
 
