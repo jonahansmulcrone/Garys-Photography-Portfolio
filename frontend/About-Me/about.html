@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="about.css">
+    <link href="https://db.onlinewebfonts.com/c/89819f545a65740acd8dfb11e24cc71a?family=Columbia+Titling+Medium"
+        rel="stylesheet">
+    <link href="https://db.onlinewebfonts.com/c/39ca8a198fd5bfe5a67ff04fd6ad15f3?family=Gemeli+Mono+Web+Light+Regular"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-left">
+            <div class="link"><a href="../index.html">Home</a></div>
+            <div class="link"><a href="../Portfolio/portfolio.html">Portfolio</a></div>
+        </div>
+        <div class="navbar-right">
+
+            <div class="link-current"><a>About</a></div>
+            <div class="link"><a href="../Contact-Me/contact.html">Contact</a></div>
+        </div>
+        <div class="hamburger">&#9776;</div>
+        <i class="fas fa-times close-icon"></i>
+    </div>
+
+    <div class="hamburger-navbar">
+        <div class="link"><a href="../index.html">Home</a></div>
+        <div class="link"><a href="../Portfolio/portfolio.html">Portfolio</a></div>
+        <div class="link-current"><a>About</a></div>
+        <div class="link"><a href="../Contact-Me/contact.html">Contact</a></div>
+    </div>
+
+    
+    <div class="container">
+        <div class="about-me-img"><img src="Jonah-Profile.JPG"></div>
+        <div class="section">
+            <div class="about-me">
+                <div class="about-me-title">About The Photographer</div>
+                <div class="about-me-description">As a young boy I watched my Mother and learned from her as she tended her
+                    garden. My Father was an Army Aircorp Photographer and I watched and learned from him, and made prints in our
+                    darkroom. </div>
+
+                <div class="about-me-description">I was trained as a newspaper photographer and worked for papers to record
+                    important events.</div>
+                <div class="about-me-description">My Wife and I filled our yard up with beautiful flowers just like my Mom did.
+                    I taught elementary special education in the public schools for 30+ years. However, photography was my first love, and 
+                    it has grown over the years.</div>
+                <div class="about-me-description">Thank you Mom for the love of flowers, and thank you Dad for the love of photography.
+                    Without you, these beautiful photographs would not have been made.</div>
+                    
+
+            </div>
+        </div>
+        <div class="section">
+            <div class="about-me-title">Info</div>
+            <div class="about-me-info">Puyallup, WA</div>
+            <div class="about-me-info">garymulcrone@comcast.net</div>
+            <div class="about-me-info">(253) 722-6577</div>
+        </div>
+    </div>
+    <script>
+
+        document.querySelector('.hamburger').addEventListener('click', function () {
+            document.querySelector('.container').classList.toggle('hidden');
+            document.querySelector('.hamburger-navbar').classList.toggle('hidden')
+            document.querySelector('.hamburger').classList.toggle('hidden')
+            document.querySelector('.close-icon').classList.toggle('hidden')
+
+        });
+
+        document.querySelector('.close-icon').addEventListener('click', function() {
+            document.querySelector('.container').classList.toggle('hidden');
+            document.querySelector('.hamburger-navbar').classList.toggle('hidden')
+            document.querySelector('.hamburger').classList.toggle('hidden')
+            document.querySelector('.close-icon').classList.toggle('hidden')
+        })
+
+    </script>
+
+</body>
+
+</html>

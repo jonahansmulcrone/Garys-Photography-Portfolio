@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #ffffff;
+}
+
+.navbar {
+    padding: 75px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    font-family: "Gemeli Mono Web Light Regular";
+    letter-spacing: 2px;
+}
+
+.navbar-left, .navbar-right {
+    position: absolute;
+    top: 50%;
+}
+
+.navbar-left {
+    left: 80px;
+    display: flex;
+}
+
+.navbar-right {
+    right: 80px;
+    display: flex;
+}
+
+.navbar-left div, .navbar-right div {
+    font-weight: 200;
+    cursor: pointer;
+    margin: 0 25px;
+    width: 45px;
+}
+
+a {
+    text-decoration: none;
+    color: #b3b3b3;
+    transition: all 0.1s ease;
+}
+
+a:hover {
+    font-weight: 600;
+    color: black;
+}
+
+.link-current a {
+    font-weight: 600;
+    color: black;
+}
+
+.container {
+    width: 100%;
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.vertical-image-wrapper {
+    width: 100%;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.vertical-image-wrapper img {
+    width: 31.4%;
+    height: auto; 
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.horizontal-image-wrapper {
+    width: 100%;
+    height: 90vh;
+}
+
+.horizontal-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.container.hidden {
+    display: none;
+}
+
+.hamburger-navbar {
+    display: none;
+}
+
+.close-icon {
+    display: none !important;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar .navbar-left,
+    .navbar .navbar-right {
+        display: none;
+    }
+
+    .container {
+        padding: 0 20px;
+        gap: 20px;
+    }
+
+    .vertical-image-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .vertical-image-wrapper img {
+        width: 100%;
+        max-height: none;
+        height: auto;
+    }
+
+    .horizontal-image-wrapper {
+        height: 70vh;
+    }
+
+    .hamburger {
+        display: block;
+        user-select: none;
+        position: absolute;
+        right: 40px;
+        font-size: 32px;
+    }
+
+    .hamburger.hidden {
+        display: none;
+    }
+
+    .hamburger-navbar.hidden {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        position: fixed;
+        top: 48%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: "Gemeli Mono Web Light Regular";
+    }
+
+    .close-icon {
+        display: none !important;
+    }
+
+    .close-icon.hidden {
+        display: block !important;
+        user-select: none !important;
+        position: absolute !important;
+        right: 43px !important;
+        top: 82px;
+        font-size: 32px !important;
+    }
+}
