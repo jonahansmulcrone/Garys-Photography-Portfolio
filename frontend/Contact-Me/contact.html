@@ -20,7 +20,6 @@
             <div class="link"><a href="../Portfolio/portfolio.html">Portfolio</a></div>
         </div>
         <div class="navbar-right">
-
             <div class="link"><a href="../About-Me/about.html">About</a></div>
             <div class="link-current"><a>Contact</a></div>
         </div>
@@ -34,7 +33,6 @@
         <div class="link"><a href="../About-Me/about.html">About</a></div>
         <div class="link-current"><a>Contact</a></div>
     </div>
-
 
     <div class="container">
         <div class="sections">
@@ -78,6 +76,7 @@
     </div>
 
     <script>
+        // Email form submission handler
         document.getElementById('email-form').addEventListener('submit', async (e) => {
             e.preventDefault();
 
@@ -88,14 +87,28 @@
             const response = await fetch('http://localhost:3001/contact', {
                 method: 'POST',
                 headers: {
-                    'Content-Type' : 'application/json'
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ email, subject, message }),
             });
 
             const result = await response.json();
             alert(result.message);
-        })
+        });
+
+        document.querySelector('.hamburger').addEventListener('click', function () {
+            document.querySelector('.container').classList.toggle('hidden');
+            document.querySelector('.hamburger-navbar').classList.toggle('hidden');
+            document.querySelector('.hamburger').classList.toggle('hidden');
+            document.querySelector('.close-icon').classList.toggle('hidden');
+        });
+
+        document.querySelector('.close-icon').addEventListener('click', function () {
+            document.querySelector('.container').classList.toggle('hidden');
+            document.querySelector('.hamburger-navbar').classList.toggle('hidden');
+            document.querySelector('.hamburger').classList.toggle('hidden');
+            document.querySelector('.close-icon').classList.toggle('hidden');
+        });
     </script>
 
 </body>
