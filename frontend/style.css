@@ -41,10 +41,6 @@
 }
 
 @media (max-height: 1030px) {
-    .landing-page-title {
-
-    }
-
     .navbar-landing-page {
         margin-top: 150px;
     }
@@ -83,10 +79,11 @@ a:hover {
 
 .instagram-ref {
     position: absolute;
-    bottom: 50px;
+    bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 999;
+
 }
 
 /* Media queries for responsiveness */
@@ -115,18 +112,31 @@ a:hover {
     }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 450px) {
     .landing-page-title {
         font-size: 24px;
-        margin-top: 200px;
+        margin-top: 240px;
     }
 
     .navbar-landing-page {
-        margin-top: 140px;
+        margin-top: 280px;
         gap: 28px;
     }
 
     .navbar-landing-page div a {
         font-size: 18px;
+    }
+
+    .instagram-ref {
+        bottom: 120px;
+    }
+}
+
+@media screen and (max-height: 850px) {
+    .navbar-landing-page {
+        margin-top: 200px;
+    }
+    .instagram-ref {
+        bottom: 125px;
     }
 }
